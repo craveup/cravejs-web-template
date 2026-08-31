@@ -1,0 +1,208 @@
+.surface {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding: var(--space-5) var(--layout-gutter) calc(var(--shell-mobile-cta-height) + var(--space-5));
+}
+
+.closedBanner {
+  margin-inline: calc(var(--layout-gutter) * -1);
+  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--layout-gutter);
+  background: var(--color-brand-subtle);
+  color: var(--color-text-primary);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-body-strong);
+}
+
+.surface h1,
+.surface h2,
+.surface p {
+  margin-top: 0;
+}
+
+.surface h1 {
+  font-family: var(--font-display), serif;
+  font-size: var(--text-display-sm);
+  font-weight: var(--font-display-style);
+  line-height: 1.08;
+}
+
+.day {
+  margin-top: var(--space-6);
+  padding: 0;
+  border: 0;
+}
+
+.day legend {
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-body-strong);
+}
+
+.slots {
+  display: grid;
+  gap: 0;
+}
+
+.slot {
+  position: relative;
+  display: flex;
+  min-height: var(--size-tap-target);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border: 0;
+  border-bottom: var(--stroke-hairline) solid var(--color-border-subtle);
+  border-radius: var(--space-0);
+  background: var(--color-surface-raised);
+  cursor: pointer;
+}
+
+.slot:has(input:checked) {
+  color: var(--color-text-primary);
+}
+
+.slot:has(input:disabled) {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.selectLabel {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-body-strong);
+}
+
+.asap legend {
+  display: inline-flex;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-primary);
+  color: var(--color-brand-on-primary);
+  font-size: var(--text-label-md);
+}
+
+.asap .slot {
+  min-height: 76px;
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: var(--stroke-width) solid var(--color-border-brand);
+  border-radius: var(--radius-card);
+}
+
+.asap .slot > span {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.asap .slot small {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-body-style);
+}
+
+.status {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.retry {
+  min-height: var(--size-tap-target);
+  padding: var(--space-2) var(--space-5);
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-button);
+  background: var(--color-surface-raised);
+  cursor: pointer;
+}
+
+.action {
+  position: fixed;
+  z-index: 18;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-4) var(--layout-gutter) calc(var(--space-4) + env(safe-area-inset-bottom));
+  border-top: var(--stroke-hairline) solid var(--color-border-subtle);
+  background: var(--color-surface-raised);
+}
+
+.action button {
+  display: flex;
+  width: min(100%, 640px);
+  min-height: calc(var(--size-tap-target) + var(--space-2));
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--space-5);
+  border: 0;
+  border-radius: var(--radius-button);
+  background: var(--color-brand-primary);
+  color: var(--color-brand-on-primary);
+  font: inherit;
+  font-weight: var(--font-body-strong);
+  cursor: pointer;
+}
+
+.action button:disabled {
+  background: var(--color-surface-sunken);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+  .slot:has(input:checked) {
+    border-color: Highlight;
+    outline: var(--stroke-width) solid Highlight;
+    outline-offset: var(--space-1);
+  }
+
+  .slot:has(input:disabled),
+  .action button:disabled {
+    border: var(--stroke-width) solid GrayText;
+    color: GrayText;
+  }
+}
+
+@media (min-width: 1024px) {
+  .surface {
+    padding-block: var(--space-10);
+  }
+
+  .surface h1 {
+    font-size: var(--text-display-md);
+  }
+
+  .closedBanner {
+    margin-inline: 0;
+    border-radius: var(--radius-card);
+  }
+
+  .slots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .slot {
+    justify-content: center;
+    padding-inline: var(--space-3);
+    border: var(--stroke-width) solid var(--color-border-default);
+    border-radius: var(--radius-input);
+  }
+
+  .slot:has(input:checked) {
+    border-color: var(--color-border-brand);
+    background: var(--color-brand-subtle);
+  }
+
+  .selectLabel {
+    display: none;
+  }
+
+  .asap .slot {
+    justify-content: flex-start;
+  }
+
+  .action {
+    position: static;
+    margin-top: var(--space-6);
+    padding: 0;
+    border: 0;
+  }
+}

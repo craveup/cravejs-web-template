@@ -1,0 +1,372 @@
+.surface {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding: var(--space-4) var(--layout-gutter)
+    calc(var(--shell-mobile-cta-height) + var(--space-5));
+}
+
+.intro h1 {
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-body-strong);
+}
+
+.intro p {
+  display: none;
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-secondary);
+}
+
+.search {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.searchLabel {
+  display: none;
+  font-size: var(--text-label-md);
+  font-weight: var(--font-body-strong);
+}
+
+.searchControl {
+  position: relative;
+  display: flex;
+  min-height: var(--size-tap-target);
+  align-items: center;
+  overflow: hidden;
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-raised);
+}
+
+.searchControl input {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--size-tap-target);
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text-primary);
+  font: inherit;
+}
+
+.searchControl button {
+  display: grid;
+  width: var(--size-tap-target);
+  min-height: var(--size-tap-target);
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.searchControl button:disabled {
+  color: var(--color-text-muted);
+  cursor: wait;
+}
+
+.searchControl button svg {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+.mapPlaceholder {
+  position: relative;
+  min-height: calc(var(--space-11) + var(--space-11) + var(--space-5));
+  margin-top: var(--space-4);
+  overflow: hidden;
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-image);
+  background: var(--color-surface-sunken);
+}
+
+.mapPlaceholder svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.water {
+  fill: none;
+  stroke: var(--color-border-default);
+  stroke-width: var(--space-6);
+}
+
+.road {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: var(--space-2);
+}
+
+.buildings {
+  fill: var(--color-surface-raised);
+  stroke: var(--color-text-secondary);
+  stroke-width: var(--stroke-width);
+}
+
+.park {
+  fill: var(--color-status-success);
+}
+
+.pin {
+  fill: var(--color-text-secondary);
+}
+
+.pinCenter {
+  fill: var(--color-surface-raised);
+}
+
+.status {
+  display: grid;
+  min-height: var(--space-5);
+  gap: var(--space-1);
+  margin-block: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  overflow: hidden;
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+}
+
+.card[data-selected="true"] {
+  border-color: var(--color-border-brand);
+}
+
+.card button {
+  display: flex;
+  width: 100%;
+  min-height: calc(var(--size-tap-target) + var(--space-8));
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.card button:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.cardCopy {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-2);
+}
+
+.storeHeading,
+.storeDetails,
+.modeList {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.storeHeading {
+  gap: var(--space-2);
+}
+
+.storeName {
+  overflow: hidden;
+  font-size: var(--text-body-md);
+  font-weight: var(--font-body-strong);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.storeDetails {
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.distance {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.modeList {
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.mode {
+  padding: var(--space-2) var(--space-4);
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-primary);
+  font-size: var(--text-label-md);
+  font-weight: var(--font-body-strong);
+}
+
+.unavailable {
+  color: var(--color-status-danger);
+  font-size: var(--text-label-sm);
+}
+
+.selection {
+  display: none;
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  flex: 0 0 auto;
+  border: var(--stroke-width) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+}
+
+.card[data-selected="true"] .selection {
+  border: var(--space-1) solid var(--color-brand-primary);
+}
+
+.empty {
+  padding-block: var(--space-7);
+  text-align: center;
+}
+
+.empty h2,
+.empty p {
+  margin: 0;
+}
+
+.empty h2 {
+  font-family: var(--font-display), serif;
+  font-size: var(--text-heading-md);
+  font-weight: var(--font-display-style);
+}
+
+.empty p {
+  margin-top: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.primaryAction {
+  position: fixed;
+  z-index: 18;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-4) var(--layout-gutter)
+    calc(var(--space-4) + env(safe-area-inset-bottom));
+  border-top: var(--stroke-hairline) solid var(--color-border-subtle);
+  background: var(--color-surface-raised);
+}
+
+.primaryAction a {
+  display: flex;
+  width: min(100%, 640px);
+  min-height: calc(var(--size-tap-target) + var(--space-2));
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-button);
+  background: var(--color-brand-primary);
+  color: var(--color-brand-on-primary);
+  font-family: var(--font-accent), sans-serif;
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-accent-style);
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .surface {
+    padding: var(--space-10) 0 var(--space-11);
+  }
+
+  .intro h1 {
+    font-family: var(--font-display), serif;
+    font-size: var(--text-display-md);
+    font-weight: var(--font-display-style);
+    line-height: 1.05;
+  }
+
+  .intro p {
+    display: block;
+    font-size: var(--text-body-lg);
+  }
+
+  .search {
+    margin-top: var(--space-7);
+  }
+
+  .searchLabel {
+    display: block;
+  }
+
+  .mapPlaceholder {
+    min-height: calc(
+      var(--space-10) + var(--space-10) + var(--space-10) + var(--space-10) +
+        var(--space-1)
+    );
+  }
+
+  .status {
+    margin-bottom: var(--space-1);
+  }
+
+  .list {
+    gap: var(--space-2);
+  }
+
+  .card button {
+    min-height: calc(var(--size-tap-target) + var(--space-2));
+    padding-block: var(--space-2);
+  }
+
+  .cardCopy {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .storeHeading {
+    flex: 0 0 calc(var(--space-11) + var(--space-10));
+  }
+
+  .storeDetails {
+    flex: 1;
+  }
+
+  .modeList {
+    margin-inline-start: auto;
+  }
+
+  .mode {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-label-sm);
+  }
+
+  .selection {
+    display: block;
+  }
+
+  .primaryAction {
+    position: static;
+    margin-top: var(--space-5);
+    padding: 0;
+    border: 0;
+  }
+}

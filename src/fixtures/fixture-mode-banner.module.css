@@ -1,0 +1,12 @@
+.banner {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  padding: var(--space-2) var(--layout-gutter);
+  border-bottom: var(--stroke-hairline) solid var(--color-border-strong);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-on-inverse);
+  font-size: var(--text-label-sm);
+  font-weight: var(--font-body-strong);
+  text-align: center;
+}

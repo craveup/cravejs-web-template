@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "conflictStrategy": "stop",
+  "templateOwned": [
+    "src/app",
+    "src/components/shell",
+    "src/components/ui",
+    "src/config",
+    "src/features",
+    "src/lib",
+    "src/styles",
+    "design/implementation-invariants.json",
+    "scripts/dev-fixtures.mjs",
+    "scripts/profile-smoke.mjs",
+    "template",
+    "package.json",
+    "pnpm-lock.yaml",
+    "tsconfig.json",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "eslint.config.mjs",
+    "pnpm-workspace.yaml",
+    ".nvmrc",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "docs",
+    ".env.example",
+    "public/assets/template"
+  ],
+  "userOwned": [
+    "src/components/extensions",
+    "src/content",
+    "src/telemetry",
+    "design/variables-export.json",
+    "public/assets/merchant",
+    "public/fonts",
+    "deployment",
+    ".env"
+  ]
+}

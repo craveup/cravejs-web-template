@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "profile": "standalone-cli",
+  "files": [
+    {
+      "source": "template/standalone/CONFIGURATION.md",
+      "destination": "docs/CONFIGURATION.md",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/CUSTOMIZATION.md",
+      "destination": "docs/CUSTOMIZATION.md",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/DEPLOYMENT.md",
+      "destination": "docs/DEPLOYMENT.md",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/README.template.md",
+      "destination": "README.md",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/UPGRADING.md",
+      "destination": "docs/UPGRADING.md",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/env.example.template",
+      "destination": ".env.example",
+      "ownership": "template-owned"
+    },
+    {
+      "source": "template/standalone/package.template.json",
+      "destination": "package.json",
+      "ownership": "template-owned"
+    }
+  ]
+}

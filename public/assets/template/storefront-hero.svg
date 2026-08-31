@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" rx="72" fill="#0F172A"/>
+  <circle cx="600" cy="330" r="180" fill="#F8FAFC" opacity="0.18"/>
+  <path d="M350 520c120-160 380-160 500 0" fill="none" stroke="#F8FAFC" stroke-width="42" stroke-linecap="round"/>
+  <text x="600" y="690" text-anchor="middle" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="72" font-weight="700">Storefront</text>
+</svg>

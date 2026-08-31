@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Repository-local template release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "repository",
+    "platform",
+    "profile",
+    "templateRelease",
+    "templateCommit",
+    "templateIntegrity",
+    "sdkPackage",
+    "sdkVersion",
+    "sdkIntegrity",
+    "apiRelease",
+    "openapiSha256",
+    "minimumCliVersion",
+    "configSchemaVersion",
+    "configSchemaSha256",
+    "releasedAt"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "const": "web" },
+    "repository": { "const": "craveup/cravejs-web-template" },
+    "platform": { "const": "web" },
+    "profile": { "const": "standalone-cli" },
+    "templateRelease": {
+      "type": "string",
+      "pattern": "^(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-(?:(?:0|[1-9]\\d*|\\d*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+(?:[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?$"
+    },
+    "templateCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "templateIntegrity": {
+      "type": "string",
+      "pattern": "^sha256-(?:[A-Za-z0-9+/]{4}){10}[A-Za-z0-9+/]{2}[AEIMQUYcgkosw048]=$"
+    },
+    "sdkPackage": { "const": "@craveup/storefront-sdk" },
+    "sdkVersion": { "const": "2.0.1" },
+    "sdkIntegrity": {
+      "type": "string",
+      "pattern": "^sha512-(?:[A-Za-z0-9+/]{4}){21}[A-Za-z0-9+/][AQgw]==$"
+    },
+    "apiRelease": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-(?:(?:0|[1-9]\\d*|\\d*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+(?:[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?)$"
+    },
+    "openapiSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "minimumCliVersion": { "const": "2.0.0" },
+    "configSchemaVersion": { "const": "1.0.0" },
+    "configSchemaSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "releasedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26]))|(?:(?:0[48]|[2468][048]|[13579][26])00))-02-29|(?:[0-9]{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12][0-9]|3[01])|(?:0[469]|11)-(?:0[1-9]|[12][0-9]|30)|02-(?:0[1-9]|1[0-9]|2[0-8]))))T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\\.[0-9]+)?Z$"
+    }
+  }
+}

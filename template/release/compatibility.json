@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "identity": {
+    "id": "web",
+    "repository": "craveup/cravejs-web-template",
+    "platform": "web",
+    "profile": "standalone-cli"
+  },
+  "template": {
+    "versioning": "semver-2.0.0",
+    "minimumVersion": "0.1.0"
+  },
+  "cli": {
+    "minimumVersion": "2.0.0"
+  },
+  "node": {
+    "major": 24
+  },
+  "pnpm": {
+    "version": "10.33.2"
+  },
+  "sdk": {
+    "package": "@craveup/storefront-sdk",
+    "version": "2.0.1",
+    "integrity": "sha512-dqvAtGf9+0ZVbG57iDAXNs4HAy+N37u9bmx5+y8KFFsVxOkvrPP5rhrLv7BBKvLosdhooi8YRAQsWCW9xxuJog=="
+  },
+  "openapi": {
+    "apiRelease": "52cac07f74f1b8ca9a931354240560ef9beb4dce",
+    "sha256": "9ba30418162695c27842ba6085ba00510c867137ecf83df0fe55b7808762a0d7",
+    "documentRevision": 1,
+    "documentDerivation": "The published servers block named an internal development host. It is removed downstream so a public template cannot ship pointing at Crave infrastructure; the origin belongs to generated project configuration. apiRelease still names the upstream API release this document derives from, and documentRevision advances whenever the downstream bytes change, so a changed document can never keep an unchanged identity."
+  },
+  "configSchemaVersion": "1.0.0",
+  "upgrade": {
+    "conflictStrategy": "stop",
+    "allowMutableSources": false,
+    "allowPrivateRepositories": false
+  }
+}

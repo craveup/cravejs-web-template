@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "../styles/generated-tokens.css";
+@import "../styles/storefront.css";
+
+@theme inline {
+  --color-background: var(--color-surface-page);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), sans-serif;
+  font-weight: var(--font-body-style);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

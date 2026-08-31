@@ -1,0 +1,50 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: min(100%, var(--layout-content-max));
+  margin-inline: auto;
+  padding: var(--space-3) var(--layout-gutter);
+  border-bottom: var(--stroke-hairline) solid var(--color-border-default);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-primary);
+  font-size: var(--text-body-sm);
+}
+
+.banner strong {
+  font-weight: var(--font-body-strong);
+}
+
+.banner a {
+  flex: none;
+  color: var(--color-brand-primary);
+  font-size: var(--text-label-md);
+  font-weight: var(--font-body-strong);
+}
+
+.invalid {
+  border-color: var(--color-border-strong);
+}
+
+.retry {
+  flex: none;
+  min-height: var(--size-tap-target);
+  padding-inline: var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--color-brand-primary);
+  font: inherit;
+  font-weight: var(--font-body-strong);
+  cursor: pointer;
+}
+
+.retry:disabled {
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.focusedStatus:focus-visible {
+  outline: var(--stroke-heavy) solid var(--color-border-brand);
+  outline-offset: var(--space-1);
+}

@@ -1,0 +1,9 @@
+.shell {
+  min-height: 100dvh;
+}
+
+@media (max-width: 1023px) {
+  .shell :global(.storefront-header-inner) {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,15 @@
+.notice {
+  position: fixed;
+  z-index: 31;
+  inset-inline-end: var(--space-2);
+  bottom: calc(var(--shell-mobile-cta-height) + var(--space-2));
+  max-width: calc(100vw - var(--space-4));
+  padding: var(--space-1) var(--space-2);
+  border: var(--stroke-hairline) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-on-inverse);
+  font-size: var(--text-label-sm);
+  font-weight: var(--font-body-strong);
+  text-align: center;
+}

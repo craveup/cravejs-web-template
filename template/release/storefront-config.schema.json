@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.craveup.com/schemas/storefront-config/1.0.0.json",
+  "title": "Crave.js standalone storefront configuration",
+  "x-crave-semanticValidator": "../../src/config/storefront-regional-semantics.mjs#validateStorefrontRegionalConfig",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile",
+    "tenantId",
+    "projectId",
+    "merchantSlug",
+    "canonicalOrigin",
+    "apiBaseUrl",
+    "assetOrigins",
+    "checkoutOrigins",
+    "themeId",
+    "locale",
+    "timeZone",
+    "templateRelease",
+    "configSchemaVersion",
+    "capabilities",
+    "newsletter"
+  ],
+  "properties": {
+    "profile": {
+      "const": "standalone-cli"
+    },
+    "tenantId": {
+      "type": "string",
+      "pattern": "^standalone:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "projectId": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "merchantSlug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "canonicalOrigin": {
+      "$ref": "#/$defs/httpOrigin"
+    },
+    "apiBaseUrl": {
+      "$ref": "#/$defs/httpOrigin"
+    },
+    "assetOrigins": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/httpsOrigin"
+      }
+    },
+    "checkoutOrigins": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/httpsOrigin"
+      }
+    },
+    "themeId": {
+      "enum": ["base", "ember", "hearth", "meadow", "noir", "signal"]
+    },
+    "locale": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S+$",
+      "x-crave-format": "bcp47"
+    },
+    "timeZone": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S+$",
+      "x-crave-format": "iana-time-zone"
+    },
+    "templateRelease": {
+      "type": "string",
+      "pattern": "^(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "configSchemaVersion": {
+      "const": "1.0.0"
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["loyalty"],
+      "properties": {
+        "loyalty": {
+          "type": "boolean"
+        }
+      }
+    },
+    "newsletter": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/newsletter"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "httpOrigin": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/httpOnlyOrigin"
+        },
+        {
+          "$ref": "#/$defs/httpsOrigin"
+        }
+      ]
+    },
+    "httpOnlyOrigin": {
+      "type": "string",
+      "pattern": "^http://(?:localhost|(?=[a-z0-9.-]*[a-z])(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))*)(?::(?!80(?![\\s\\S]))(?:[1-9]\\d{0,3}|[1-5]\\d{4}|6[0-4]\\d{3}|65[0-4]\\d{2}|655[0-2]\\d|6553[0-5]))?(?![\\s\\S])"
+    },
+    "httpsOrigin": {
+      "type": "string",
+      "pattern": "^https://(?:localhost|(?=[a-z0-9.-]*[a-z])(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))*)(?::(?!443(?![\\s\\S]))(?:[1-9]\\d{0,3}|[1-5]\\d{4}|6[0-4]\\d{3}|65[0-4]\\d{2}|655[0-2]\\d|6553[0-5]))?(?![\\s\\S])"
+    },
+    "newsletter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "emailLabel",
+        "submitLabel",
+        "consentCopy",
+        "successMessage"
+      ],
+      "properties": {
+        "heading": {
+          "$ref": "#/$defs/shortCopy"
+        },
+        "emailLabel": {
+          "$ref": "#/$defs/shortCopy"
+        },
+        "submitLabel": {
+          "$ref": "#/$defs/shortCopy"
+        },
+        "consentCopy": {
+          "$ref": "#/$defs/longCopy"
+        },
+        "successMessage": {
+          "$ref": "#/$defs/longCopy"
+        }
+      }
+    },
+    "shortCopy": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+    },
+    "longCopy": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+    }
+  }
+}

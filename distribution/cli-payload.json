@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "note": "What a generated project actually receives. This is deliberately narrower than the public source repository: a scaffolded storefront needs the application, its configuration and its starter content, not the template's own governance, release tooling, plans or distribution gates. Keeping the two separate is what lets the public repository stay a complete, self-verifying tree while the CLI payload stays small.",
+  "include": [
+    "src/",
+    "public/",
+    "template/standalone/",
+    "template/release/",
+    "scripts/dev-fixtures.mjs",
+    "scripts/profile-smoke.mjs",
+    "design/implementation-invariants.json",
+    "docs/contracts/",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "tsconfig.json",
+    "eslint.config.mjs",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    ".nvmrc",
+    ".gitignore",
+    ".env.example",
+    "README.md",
+    "LICENSE"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/__tests__/"
+  ],
+  "rationale": {
+    "src/": "The application itself.",
+    "public/": "Static assets the application serves. Every file here passes the ownership ledger before a release is published.",
+    "template/standalone/": "Starter content the generated project begins from.",
+    "template/release/": "The validated configuration schema and file-ownership policy consumed by the CLI before it publishes a generated project.",
+    "scripts/dev-fixtures.mjs": "The explicitly labeled zero-network development mode documented by the generated starter.",
+    "scripts/profile-smoke.mjs": "The generated project's post-build runtime gate used by the CLI lifecycle.",
+    "design/implementation-invariants.json": "The approved motion and shell decisions retained as generated-project design evidence without shipping the source repository's Figma toolchain.",
+    "docs/contracts/": "The integration surface a generated project codes against.",
+    "excluded-tests": "A scaffolded project brings its own tests. Shipping the template's suite would fail immediately against a project that has diverged from it."
+  }
+}

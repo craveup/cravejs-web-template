@@ -1,0 +1,124 @@
+.adjustments {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--stroke-hairline) solid var(--color-border-subtle);
+}
+
+.section h2,
+.section p,
+.notice,
+.error,
+.status,
+.secureNote {
+  margin: 0;
+}
+
+.section h2 {
+  font-size: var(--text-heading-sm);
+}
+
+.section p,
+.notice,
+.status,
+.secureNote {
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.tipOptions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.tipOptions button,
+.inlineForm button,
+.appliedDiscount button,
+.reward button {
+  min-height: var(--size-tap-target);
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-button);
+  background: var(--color-surface-raised);
+  color: var(--color-text-primary);
+  font-weight: var(--font-body-strong);
+  cursor: pointer;
+}
+
+.tipOptions button[aria-pressed="true"] {
+  border-color: var(--color-border-brand);
+  background: var(--color-brand-subtle);
+}
+
+.inlineForm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-2);
+}
+
+.inlineForm label {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-body-strong);
+}
+
+.inlineForm input {
+  min-height: var(--size-tap-target);
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  border: var(--stroke-width) solid var(--color-border-default);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-raised);
+  color: var(--color-text-primary);
+}
+
+.inlineForm button,
+.appliedDiscount button,
+.reward button {
+  padding-inline: var(--space-4);
+}
+
+.appliedDiscount,
+.reward {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.reward span {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.reward small {
+  color: var(--color-text-secondary);
+}
+
+.error {
+  color: var(--color-status-danger);
+  font-size: var(--text-body-sm);
+}
+
+.status {
+  min-height: var(--space-5);
+}
+
+.adjustments :global(.primary-button) {
+  width: 100%;
+}
+
+.tipOptions button:disabled,
+.inlineForm button:disabled,
+.appliedDiscount button:disabled,
+.reward button:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}

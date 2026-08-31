@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "note": "Neutral assets generated from repository-owned SVG primitives for the public Crave.js web template. Approval is bound to exact bytes.",
+  "statuses": {
+    "crave-owned": "Programmatically authored for this public template and owned by Crave Up, Inc.",
+    "licensed": "Third-party work with recorded source and licence.",
+    "unconfirmed": "Blocks release."
+  },
+  "assets": [
+    {
+      "path": "public/assets/template/menu-item.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "94aee0841778dae7c1ec939274d565503dd1557bc9f81ee9fe911dbe1a5fa61d"
+    },
+    {
+      "path": "public/assets/template/storefront-hero.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "494455db9457dd394eeb8d95621698ed85d3fb22108bc188b8e7eaac5cf221ef"
+    },
+    {
+      "path": "public/assets/template/bakery-editorial-hero.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "7610c87e6b02eb0d2e846afa7ca19df84e55c906531806b36391ecbd9d51b31e"
+    },
+    {
+      "path": "public/assets/template/noodle-house-hero.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "867cbf6247a510b36cfbff411600d41d1ffe29fc1b1d1cce2b56ac93838334b4"
+    },
+    {
+      "path": "public/assets/template/sushi-atelier-hero.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "3843d90ba9c6afe3cba94094744159df2a2030c7413815f15cca03875f37a5e4"
+    },
+    {
+      "path": "public/assets/template/counter-service-hero.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "74d03b611c909fd33bd60301e3556462adfa3ee361f6bda44ec6a9cb2bb68fa8"
+    },
+    {
+      "path": "src/app/icon.svg",
+      "status": "crave-owned",
+      "source": "scripts/create-public-mirror-snapshot.mjs",
+      "license": "MIT",
+      "sha256": "ff78851a1be410ebfb6dae247eaefe7c93c2ce249be1c8c5b8a83be34a800338"
+    }
+  ]
+}
